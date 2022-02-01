@@ -15,7 +15,7 @@ class App extends React.Component {
 
 
   componentDidMount(){
-    this.interval = setInterval(this.getData, 5000);
+    this.interval = setInterval(this.getData, 60000);
     this.getData();
   }
   componentWillUnmount() {
