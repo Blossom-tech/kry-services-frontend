@@ -33,12 +33,10 @@ class App extends React.Component {
         url:'',
       })
     })
-
   }
 
 
-
-  submit(event,id){
+ submit(event,id){
     event.preventDefault();
     if(id === 0){
       axios.post("https://kry-service.herokuapp.com/service/add",{
@@ -56,18 +54,19 @@ class App extends React.Component {
       }).then(()=>{
         this.componentDidMount();
       })
-
     }
-
   }
-  delete(id){
+  
+  
+ delete(id){
     axios.delete(`https://kry-service.herokuapp.com/service/${id}`)
     .then(()=>{
       this.componentDidMount();
     })
   }
 
-  edit(id){
+  
+ edit(id){
     axios.get(`https://kry-service.herokuapp.com/service/${id}`)
     .then((res)=>{
       console.log(res.data);
