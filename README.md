@@ -42,7 +42,7 @@ Open terminal and navigate to the root folder of the project and run the followi
 
 This will start the web app/backend on the http://localhost:8080/
 
-Note: It will use a remote clearDB Mysql database instance from Heroku and create an empty table called 'service' there.
+Note: It will use a remote clearDB Mysql database add-on from Heroku and create an empty table called 'service' there.
 
 You can find the database name and credentials in application.properties files in here:
 https://github.com/Blossom-tech/kry-services-backend/blob/main/src/main/resources/application.properties
