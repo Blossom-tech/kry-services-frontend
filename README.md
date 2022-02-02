@@ -30,6 +30,8 @@ Incase node/npm are not installed by maven, install them manually.
 
 - Run the backend application.
 
+Backend repo:   https://github.com/Blossom-tech/kry-services-frontend.git
+
 Download the project on your system.
 
 Open terminal and navigate to the root folder of the project and run the following commands
