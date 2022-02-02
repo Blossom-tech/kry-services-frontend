@@ -78,6 +78,8 @@ For example: https://www.facebook.com this will give OK status
   - URL: URL of the service
   - Creation Time: Date and Time when the services were created to the list
   - Status: OK or FAIL status of the service.
+  - Edit: for editing and updated any existng service
+  - Delete: for deleting the service
 - The Application will do periodic(60 seconds) polling on each service in the list by hitting their urls and store their status (OK if status is 200 else FAIL status)
 - Services can be added, deleted and updated.
 - The Application also fetches data from the api using axios GET request in every 60 secs.
