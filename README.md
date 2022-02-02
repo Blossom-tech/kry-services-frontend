@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# Kry Code Assignment (Service Poller)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Links to the repos
 
-## Available Scripts
 
-In the project directory, you can run:
+Backend repo:   https://github.com/Blossom-tech/kry-services-frontend.git
 
-### `npm start`
+Frontend repo:  https://github.com/Blossom-tech/kry-services-frontend.git
 
-Runs the app in the development mode.\
+## How to run the Application 
+### 1. It's online at the following link on Heroku
+
+https://kry-services-frontend.herokuapp.com/
+
+The Application will show the list of services if there are any present in the database or you can add few services and it will display them on the screen.
+- It might take few seconds for the application to start up for the first time. Also, first db interaction could take few seconds.
+
+- Add some users and you are good to go.
+Note: make sure to add valid urls for OK status.
+
+For example: https://www.facebook.com this will give OK status
+
+             www.facebook.com this will give FAIL status
+
+### 2. Run locally
+
+Make sure java 8/maven is installed and added into classpath.
+
+Incase node/npm are not installed by maven, install them manually.
+
+- Run the backend application.
+
+Download the project on your system.
+
+Open terminal and navigate to the root folder of the project and run the following commands
+
+### 'mvn clean install'
+
+### 'mvn spring-boot:run'
+
+This will start the web app/backend on the http://localhost:8080/
+
+Note: It will use a remote clearDB Mysql database instance from Heroku and create an empty table called 'service' there.
+
+You can check by visiting http://localhost:8080/service/getAll that a empty table has been created.
+
+- Run the frontend Application.
+
+Link to frontend repo: https://github.com/Blossom-tech/kry-services-frontend.git
+
+Download the project on your system.
+
+Navigate to the frontend folder of the project in the Command Line and run the following commands
+
+### 'npm install'
+
+### 'npm start'
+
+This will run the app in the development mode.\
+
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Add some users and you are good to go.
+Note: make sure to add valid urls for OK status.
 
-### `npm test`
+For example: https://www.facebook.com this will give OK status
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+             www.facebook.com this will give FAIL status
 
-### `npm run build`
+## Details about the functionality
+- This App will show the list of services added to the database. It will show following fields for each service:
+  - Name: Name of the service
+  - URL: URL of the service
+  - Creation Time: Date and Time when the services were created to the list
+  - Status: OK or FAIL status of the service.
+- The Application will do periodic(60 seconds) polling on each service in the list by hitting their urls and store their status (OK if status is 200 else FAIL status)
+- Services can be added, deleted and updated.
+- The Application also fetches data from the api using axios GET request in every 60 secs.
+- It shows OK status only when the URL is a a valid URL. Follow this format "https://www.example.com"
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+For example: https://www.facebook.com this will give OK status
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+             www.facebook.com this will give FAIL status
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies used
+For Backend project: Java, Maven, Spring Boot(MVC, JPA, Hibernate) using IntelliJ as a IDE
 
-### `npm run eject`
+For Frontend project: Reactjs using Visual Studio Code as a IDE.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Material UI for designing the UI.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
