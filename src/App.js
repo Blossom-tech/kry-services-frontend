@@ -21,9 +21,9 @@ class App extends React.Component {
   componentWillUnmount() {
     clearInterval(this.interval);
   }
+  
 
   getData = () => {
-
     axios.get("https://kry-service.herokuapp.com/service/getAll")
     .then((res)=>{
       this.setState({
