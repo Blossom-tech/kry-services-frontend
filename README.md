@@ -26,7 +26,7 @@ For example: https://www.facebook.com this will give OK status
 
 Make sure java 8/maven is installed and added into classpath.
 
-Incase node/npm are not installed by maven, install them manually.
+In case node/npm are not installed by maven, install them manually.
 
 - Run the backend application.
 
